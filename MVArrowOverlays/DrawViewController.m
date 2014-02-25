@@ -54,7 +54,7 @@
 - (IBAction)sliderValueChanged:(UISlider *)sender {
 
     float currentRadius = self.maxRadius * sender.value;
-    self.sliderLabel.text = [NSString stringWithFormat:@"%.0f", currentRadius];
+    self.sliderLabel.text = [NSString stringWithFormat:@"Radius: %.0f", currentRadius];
 
     [self updateArrow];
 }
@@ -74,7 +74,7 @@
     float ratio = currentRadius / self.maxRadius;
     self.slider.value = ratio;
 
-    self.sliderLabel.text = [NSString stringWithFormat:@"%.0f", currentRadius];
+    self.sliderLabel.text = [NSString stringWithFormat:@"Radius: %.0f", currentRadius];
 }
 
 
