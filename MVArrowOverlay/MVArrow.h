@@ -12,18 +12,30 @@
 #import <Foundation/Foundation.h>
 
 /*
- Circle: Center, radius, a1, a2
-
+ Class to draw an arrow as an arc of a circle given two points and the radius.
  */
-
-
 @interface MVArrow : NSObject
 
+/*
+ @param fromPoint point where the arrow starts
+ @param toPoint point where the arrow ends
+ @param radius radius of circle passing between two points. If radius is too small, it is set to half the distance between the points (resulting in a semi-circle)
+ @param clockwise whether the arrow direction is along the circle is clockwise or anti-clockwise
+ */
 - (id)initFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint radius:(CGFloat)radius clockwise:(BOOL)clockwise;
 
+/*
+ Draws the arrow. Should be called within [UIView drawRect:]
+ */
 - (void)draw;
 
-@property (strong) UIColor *strokeColor;
-@property float strokeWidth;
+/*
+ Arrow color
+ */
+@property (strong) UIColor *arrowColor;
+/*
+ Line width for the arrow
+ */
+@property float arrowLineWidth;
 
 @end

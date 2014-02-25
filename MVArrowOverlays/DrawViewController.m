@@ -102,9 +102,9 @@
     switch (self.numTaps) {
         default:
         case 0:
-            return @"Tap 2 points to draw arc";
+            return @"Tap 2 points to draw arrow";
         case 1:
-            return [NSString stringWithFormat:@"Arc[{%.0f, %.0f}, {??, ??}]", self.firstTapPosition.x, self.firstTapPosition.y];
+            return [NSString stringWithFormat:@"First:{%.0f, %.0f}, tap second", self.firstTapPosition.x, self.firstTapPosition.y];
         case 2:
             return [NSString stringWithFormat:@"Arc[{%.0f, %.0f}, {%.0f, %.0f}]", self.firstTapPosition.x, self.firstTapPosition.y, self.secondTapPosition.x, self.secondTapPosition.y];
     }

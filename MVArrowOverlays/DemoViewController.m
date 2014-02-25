@@ -28,16 +28,27 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
+    self.doSomethingButton.layer.cornerRadius = 5;
+    self.doSomethingButton.layer.borderWidth = 1;
+    self.doSomethingButton.layer.borderColor = self.doSomethingButton.tintColor.CGColor;
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.overlayView.activeClearColor = [UIColor colorWithWhite:0.8f alpha:0.9f];
-    self.overlayView.arrowStrokeColor = [UIColor blackColor];
+    self.overlayView.activeClearColor = [UIColor colorWithWhite:0.7f alpha:0.7f];
+    self.overlayView.arrowStrokeColor = [UIColor whiteColor];
 }
 
 - (IBAction)doSomethingButtonPressed:(UIButton *)sender {
 
     self.overlayVisible = !self.overlayVisible;
+
+    [self updateOverlay];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.overlayVisible = YES;
 
     [self updateOverlay];
 }
@@ -49,7 +60,7 @@
         CGRect labelRect = self.infoLabel.frame;
         CGPoint from = CGPointMake(labelRect.origin.x + labelRect.size.width, labelRect.origin.y);
         CGRect buttonRect = self.doSomethingButton.frame;
-        CGPoint to = CGPointMake(buttonRect.origin.x + buttonRect.size.width/2, buttonRect.origin.y + buttonRect.size.height);
+        CGPoint to = CGPointMake(buttonRect.origin.x + buttonRect.size.width/2, buttonRect.origin.y + buttonRect.size.height + 5);
 
         [self.overlayView drawFromPoint:from toPoint:to radius:200 clockwise:NO];
     }

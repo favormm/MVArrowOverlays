@@ -30,7 +30,7 @@
 - (void)drawFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint radius:(CGFloat)radius clockwise:(BOOL)clockwise {
 
     self.arrow = [[MVArrow alloc] initFromPoint:fromPoint toPoint:toPoint radius:radius clockwise:clockwise];
-    self.arrow.strokeColor = self.arrowStrokeColor;
+    self.arrow.arrowColor = self.arrowStrokeColor;
     [self setNeedsDisplay];
 }
 
@@ -43,7 +43,7 @@
 {
     _arrowStrokeColor = arrowStrokeColor;
     if (self.arrow) {
-        self.arrow.strokeColor = arrowStrokeColor;
+        self.arrow.arrowColor = arrowStrokeColor;
         [self setNeedsDisplay];
     }
 }

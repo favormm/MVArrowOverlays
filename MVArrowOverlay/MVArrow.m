@@ -18,24 +18,14 @@ CGFloat distance(CGPoint p1, CGPoint p2)
     return sqrtf((p1.x-p2.x)*(p1.x-p2.x)+(p1.y-p2.y)*(p1.y-p2.y));
 }
 
-CGPoint findCircle(CGPoint p1, CGPoint p2, CGFloat radius, BOOL clockwise)
-{
-    // TODO: Assert for non valid equation solutions
-    CGFloat separation = distance(p1,p2);
+BOOL isValid(CGFloat separation, CGFloat radius) {
+    return separation > 0.0f && separation <= 2*radius;
+}
 
-    // No circle or infinite circles
-    if (separation == 0.0f) {
-        return p1;
-    }
-
+CGPoint findCentre(CGPoint p1, CGPoint p2, CGFloat radius, CGFloat separation, BOOL clockwise) {
     // points are opposite ends circle with given radius
     if(separation == 2*radius) {
         return CGPointMake((p1.x+p2.x)/2, (p1.y+p2.y)/2);
-    }
-
-    // points too far
-    if(separation > 2*radius) {
-        return CGPointZero;
     }
 
     float mirrorDistance = sqrtf(radius * radius - separation * separation / 4);
@@ -50,6 +40,7 @@ float findAngle(CGPoint from, CGPoint to) {
     return atan2f(dy, dx);
 }
 
+
 @interface MVArrow()
 @property CGPoint circleCenter;
 @property CGFloat radius;
@@ -62,27 +53,32 @@ float findAngle(CGPoint from, CGPoint to) {
 
 @implementation MVArrow
 
-
 - (id)initFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint radius:(CGFloat)radius clockwise:(BOOL)clockwise {
 
     if (self = [super init]) {
 
-        self.toPoint = toPoint;
-        self.circleCenter = findCircle(fromPoint, toPoint, radius, clockwise);
-        self.radius = radius;
-        self.clockwise = clockwise;
+        // Calculate
+        CGFloat separation = distance(fromPoint,toPoint);
+        if (!isValid(separation, radius))
+            radius = 0.5f * separation;
+
+        self.circleCenter = findCentre(fromPoint, toPoint, radius, separation, clockwise);
         self.startAngle = findAngle(self.circleCenter, fromPoint);
         self.endAngle = findAngle(self.circleCenter, toPoint);
 
-        self.strokeColor = [UIColor whiteColor];
-        self.strokeWidth = 2.0f;
+        self.toPoint = toPoint;
+        self.radius = radius;
+        self.clockwise = clockwise;
+
+        self.arrowColor = [UIColor whiteColor];
+        self.arrowLineWidth = 2.0f;
     }
     return self;
 }
 
 - (void)draw {
 
-    [self.strokeColor setStroke];
+    [self.arrowColor setStroke];
 
     [self drawArc];
     [self drawArrow];
@@ -92,15 +88,15 @@ float findAngle(CGPoint from, CGPoint to) {
 
     UIBezierPath *arc = [UIBezierPath bezierPath];
     [arc addArcWithCenter:self.circleCenter radius:self.radius startAngle:self.startAngle endAngle:self.endAngle clockwise:self.clockwise];
-    [arc setLineWidth:self.strokeWidth];
+    [arc setLineWidth:self.arrowLineWidth];
     [arc stroke];
 }
 
 - (void)drawArrow {
 
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextSetStrokeColorWithColor(ctx, self.strokeColor.CGColor);
-    CGContextSetLineWidth(ctx, self.strokeWidth);
+    CGContextSetStrokeColorWithColor(ctx, self.arrowColor.CGColor);
+    CGContextSetLineWidth(ctx, self.arrowLineWidth);
 
     float arrowLength = 20;
     float mult = self.clockwise ? 1.0f : -1.0f;
