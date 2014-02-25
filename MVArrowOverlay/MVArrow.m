@@ -95,30 +95,39 @@ float findAngle(CGPoint from, CGPoint to) {
 
 - (void)drawArrow {
 
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextSetStrokeColorWithColor(ctx, self.strokeColor.CGColor);
+    CGContextSetLineWidth(ctx, self.strokeWidth);
+
     float arrowLength = 20;
     float mult = self.clockwise ? 1.0f : -1.0f;
     float arrowAngle = self.endAngle + mult * (float)M_PI_2;
 
     float leftAngle = arrowAngle - (float)(0.8*M_PI);
     float rightAngle = arrowAngle + (float)(0.8*M_PI);
-    [self drawLineWithAngle:leftAngle length:arrowLength];
-    [self drawLineWithAngle:rightAngle length:arrowLength];
+
+    [self drawLineWithAngle:leftAngle length:arrowLength context:ctx];
+    [self drawLineWithAngle:rightAngle length:arrowLength context:ctx];
 }
 
-- (void)drawLineWithAngle:(float)angle length:(float)length {
+- (void)drawLineWithAngle:(float)angle length:(float)length context:(CGContextRef)ctx {
 
     float dx = cosf(angle) * length;
     float dy = sinf(angle) * length;
     CGPoint arrowEnd = CGPointMake(self.toPoint.x + dx, self.toPoint.y + dy);
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
+
+
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathMoveToPoint(path, NULL, self.toPoint.x, self.toPoint.y);
     CGPathAddLineToPoint(path, NULL, arrowEnd.x, arrowEnd.y);
-    CGContextAddPath(ctx, path);
-    CGContextSetStrokeColorWithColor(ctx, self.strokeColor.CGColor);
-    CGContextSetLineWidth(ctx, self.strokeWidth);
+
+    // Adding line cap
+    CGPathRef pathToDraw = CGPathCreateCopyByStrokingPath(path, NULL, 0.1, kCGLineCapRound, kCGLineJoinRound, 0);
+
+    CGContextAddPath(ctx, pathToDraw);
     CGContextStrokePath(ctx);
     CGPathRelease(path);
+    CGPathRelease(pathToDraw);
 }
 
 @end
