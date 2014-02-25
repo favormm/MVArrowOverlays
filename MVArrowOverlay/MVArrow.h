@@ -13,12 +13,14 @@
 
  */
 
-// http://rosettacode.org/wiki/Circles_of_given_radius_through_two_points
 
 @interface MVArrow : NSObject
 
 - (id)initFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint radius:(CGFloat)radius clockwise:(BOOL)clockwise;
 
 - (void)draw;
+
+@property (strong) UIColor *strokeColor;
+@property float strokeWidth;
 
 @end

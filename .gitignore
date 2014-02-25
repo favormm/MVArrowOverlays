@@ -24,6 +24,9 @@ xcuserdata/
 *.iws
 workspace.xml
 tasks.xml
+*.iml
+*.log
+.idea/
 
 # cocoapods
 ###############################

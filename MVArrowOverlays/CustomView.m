@@ -33,7 +33,7 @@
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, self.bounds);
-    [[UIColor cyanColor] setFill];
+    [[UIColor darkGrayColor] setFill];
     CGContextAddRect(context, rect);
     CGContextDrawPath(context, kCGPathFill);
 
