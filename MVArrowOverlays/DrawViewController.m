@@ -1,16 +1,16 @@
 //
-//  ViewController.m
+//  DrawViewController.m
 //  MVArrowOverlays
 //
 //  Created by Andrea Bizzotto on 25/02/2014.
 //  Copyright (c) 2014 Snupps. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "CustomView.h"
+#import "DrawViewController.h"
+#import "ArrowOverlayView.h"
 
-@interface ViewController ()<CustomViewDelegate>
-@property(strong, nonatomic) IBOutlet CustomView *tappableView;
+@interface DrawViewController ()<CustomViewDelegate>
+@property(strong, nonatomic) IBOutlet ArrowOverlayView *tappableView;
 @property(strong, nonatomic) IBOutlet UISlider *slider;
 @property(strong, nonatomic) IBOutlet UISwitch *clockwiseSwitch;
 @property(strong, nonatomic) IBOutlet UILabel *sliderLabel;
@@ -27,7 +27,7 @@
 @property CGPoint secondTapPosition;
 @end
 
-@implementation ViewController
+@implementation DrawViewController
 
 - (void)viewDidLoad
 {
@@ -42,6 +42,8 @@
     self.currentRadius = self.maxRadius / 2;
     self.numTaps = 0;
 
+    self.tappableView.activeClearColor = [UIColor whiteColor];
+    self.tappableView.arrowStrokeColor = [UIColor blackColor];
 }
 #pragma mark - actions
 

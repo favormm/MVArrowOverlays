@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DemoViewController.h
 //  MVArrowOverlays
 //
 //  Created by Andrea Bizzotto on 25/02/2014.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface DemoViewController : UIViewController
 
 @end

@@ -14,10 +14,11 @@
 		654C267418BCA0B60023AE88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 654C267318BCA0B60023AE88 /* main.m */; };
 		654C267818BCA0B60023AE88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 654C267718BCA0B60023AE88 /* AppDelegate.m */; };
 		654C267B18BCA0B60023AE88 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654C267918BCA0B60023AE88 /* Main_iPhone.storyboard */; };
-		654C268118BCA0B60023AE88 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654C268018BCA0B60023AE88 /* ViewController.m */; };
+		654C268118BCA0B60023AE88 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654C268018BCA0B60023AE88 /* DrawViewController.m */; };
 		654C268318BCA0B60023AE88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 654C268218BCA0B60023AE88 /* Images.xcassets */; };
 		654C26A218BCA0E90023AE88 /* MVArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 654C26A118BCA0E90023AE88 /* MVArrow.m */; };
-		ABC350105AEFBAE0E8AAB950 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC35D8170B91B6B4520D84B /* CustomView.m */; };
+		654C26A518BCC39E0023AE88 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654C26A418BCC39E0023AE88 /* DemoViewController.m */; };
+		ABC350105AEFBAE0E8AAB950 /* ArrowOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC35D8170B91B6B4520D84B /* ArrowOverlayView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +33,8 @@
 		654C267618BCA0B60023AE88 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		654C267718BCA0B60023AE88 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		654C267A18BCA0B60023AE88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		654C267F18BCA0B60023AE88 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		654C268018BCA0B60023AE88 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		654C267F18BCA0B60023AE88 /* DrawViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawViewController.h; sourceTree = "<group>"; };
+		654C268018BCA0B60023AE88 /* DrawViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
 		654C268218BCA0B60023AE88 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		654C268918BCA0B60023AE88 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		654C269118BCA0B60023AE88 /* MVArrowOverlaysTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MVArrowOverlaysTests-Info.plist"; sourceTree = "<group>"; };
@@ -41,8 +42,10 @@
 		654C269518BCA0B60023AE88 /* MVArrowOverlaysTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVArrowOverlaysTests.m; sourceTree = "<group>"; };
 		654C26A018BCA0E90023AE88 /* MVArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVArrow.h; sourceTree = "<group>"; };
 		654C26A118BCA0E90023AE88 /* MVArrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVArrow.m; sourceTree = "<group>"; };
-		ABC35D8170B91B6B4520D84B /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
-		ABC35F252C5177868696310F /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		654C26A318BCC39E0023AE88 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		654C26A418BCC39E0023AE88 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		ABC35D8170B91B6B4520D84B /* ArrowOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrowOverlayView.m; sourceTree = "<group>"; };
+		ABC35F252C5177868696310F /* ArrowOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrowOverlayView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +98,14 @@
 				654C267618BCA0B60023AE88 /* AppDelegate.h */,
 				654C267718BCA0B60023AE88 /* AppDelegate.m */,
 				654C267918BCA0B60023AE88 /* Main_iPhone.storyboard */,
-				654C267F18BCA0B60023AE88 /* ViewController.h */,
-				654C268018BCA0B60023AE88 /* ViewController.m */,
+				654C267F18BCA0B60023AE88 /* DrawViewController.h */,
+				654C268018BCA0B60023AE88 /* DrawViewController.m */,
 				654C268218BCA0B60023AE88 /* Images.xcassets */,
 				654C266E18BCA0B60023AE88 /* Supporting Files */,
-				ABC35D8170B91B6B4520D84B /* CustomView.m */,
-				ABC35F252C5177868696310F /* CustomView.h */,
+				ABC35D8170B91B6B4520D84B /* ArrowOverlayView.m */,
+				ABC35F252C5177868696310F /* ArrowOverlayView.h */,
+				654C26A318BCC39E0023AE88 /* DemoViewController.h */,
+				654C26A418BCC39E0023AE88 /* DemoViewController.m */,
 			);
 			path = MVArrowOverlays;
 			sourceTree = "<group>";
@@ -208,11 +213,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				654C268118BCA0B60023AE88 /* ViewController.m in Sources */,
+				654C268118BCA0B60023AE88 /* DrawViewController.m in Sources */,
 				654C267818BCA0B60023AE88 /* AppDelegate.m in Sources */,
 				654C26A218BCA0E90023AE88 /* MVArrow.m in Sources */,
+				654C26A518BCC39E0023AE88 /* DemoViewController.m in Sources */,
 				654C267418BCA0B60023AE88 /* main.m in Sources */,
-				ABC350105AEFBAE0E8AAB950 /* CustomView.m in Sources */,
+				ABC350105AEFBAE0E8AAB950 /* ArrowOverlayView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

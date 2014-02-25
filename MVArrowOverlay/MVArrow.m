@@ -15,7 +15,7 @@ CGFloat distance(CGPoint p1, CGPoint p2)
     return sqrtf((p1.x-p2.x)*(p1.x-p2.x)+(p1.y-p2.y)*(p1.y-p2.y));
 }
 
-CGPoint findCircle(CGPoint p1, CGPoint p2, CGFloat radius)
+CGPoint findCircle(CGPoint p1, CGPoint p2, CGFloat radius, BOOL clockwise)
 {
     // TODO: Assert for non valid equation solutions
     CGFloat separation = distance(p1,p2);
@@ -36,8 +36,8 @@ CGPoint findCircle(CGPoint p1, CGPoint p2, CGFloat radius)
     }
 
     float mirrorDistance = sqrtf(radius * radius - separation * separation / 4);
-    return CGPointMake((p1.x+p2.x)/2 + mirrorDistance*(p1.y-p2.y)/separation, (p1.y+p2.y)/2 + mirrorDistance*(p2.x-p1.x)/separation);
-    // (p1.x+p2.x)/2 - mirrorDistance*(p1.y-p2.y)/separation,(p1.y+p2.y)/2 - mirrorDistance*(p2.x-p1.x)/separation
+    float mult = clockwise ? 1.0f : -1.0f;
+    return CGPointMake((p1.x+p2.x)/2 + mult * mirrorDistance*(p1.y-p2.y)/separation, (p1.y+p2.y)/2 + mult * mirrorDistance*(p2.x-p1.x)/separation);
 }
 
 float findAngle(CGPoint from, CGPoint to) {
@@ -65,7 +65,7 @@ float findAngle(CGPoint from, CGPoint to) {
     if (self = [super init]) {
 
         self.toPoint = toPoint;
-        self.circleCenter = findCircle(fromPoint, toPoint, radius);
+        self.circleCenter = findCircle(fromPoint, toPoint, radius, clockwise);
         self.radius = radius;
         self.clockwise = clockwise;
         self.startAngle = findAngle(self.circleCenter, fromPoint);
