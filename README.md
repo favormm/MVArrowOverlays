@@ -21,4 +21,4 @@ A sample application demonstrating the usage MVArrow is included.
 
 License information can be found in the LICENSE.md file.
 
-![alt tag](https://github.com/bizz84/MVArrowOverlays/preview.png)
+![MVArrow preview](https://github.com/bizz84/MVArrowOverlays/raw/master/preview.png "MVArrow preview")
