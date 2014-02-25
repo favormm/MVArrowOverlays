@@ -9,13 +9,13 @@ USAGE
 
 MVArrow can be initialised with two points and a radius and provides a draw method to be called within a [UIView drawRect:] method.
 
-<code>
+<pre>
 - (void)drawRect:(CGRect)rect {
 
     MVArrow *arrow = [[MVArrow alloc] initFromPoint:fromPoint toPoint:toPoint radius:100 clockwise:YES];
     [arrow draw];
 }
-</code>
+</pre>
 
 A sample application demonstrating the usage MVArrow is included.
 
