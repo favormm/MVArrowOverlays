@@ -5,11 +5,11 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol CustomViewDelegate
+@protocol MVArrowOverlayDelegate <NSObject>
 - (void)tappedAtPosition:(CGPoint)position;
 @end
 
-@interface ArrowOverlayView : UIView
+@interface MVArrowOverlayView : UIView
 
 - (void)drawFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint radius:(CGFloat)radius clockwise:(BOOL)clockwise;
 - (void)clear;
@@ -18,5 +18,5 @@
 @property(strong, nonatomic) UIColor *inactiveClearColor;
 @property(strong, nonatomic) UIColor *arrowStrokeColor;
 
-@property(weak, nonatomic) id<CustomViewDelegate> delegate;
+@property(weak, nonatomic) id<MVArrowOverlayDelegate> delegate;
 @end

@@ -31,7 +31,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="mm7-hs-12j" customClass="ArrowOverlayView">
+                            <view contentMode="scaleToFill" id="mm7-hs-12j" customClass="MVArrowOverlayView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,7 +101,7 @@
                                     <action selector="clearButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UUx-69-i9e"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" id="pEz-ki-Dsp" customClass="ArrowOverlayView">
+                            <view contentMode="scaleToFill" id="pEz-ki-Dsp" customClass="MVArrowOverlayView">
                                 <rect key="frame" x="0.0" y="146" width="320" height="374"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

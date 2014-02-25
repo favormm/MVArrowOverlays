@@ -18,7 +18,7 @@
 		654C268318BCA0B60023AE88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 654C268218BCA0B60023AE88 /* Images.xcassets */; };
 		654C26A218BCA0E90023AE88 /* MVArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 654C26A118BCA0E90023AE88 /* MVArrow.m */; };
 		654C26A518BCC39E0023AE88 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654C26A418BCC39E0023AE88 /* DemoViewController.m */; };
-		ABC350105AEFBAE0E8AAB950 /* ArrowOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC35D8170B91B6B4520D84B /* ArrowOverlayView.m */; };
+		ABC351C363F6C1717D9A0739 /* MVArrowOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC35292C69C90F85788986B /* MVArrowOverlayView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,15 +37,12 @@
 		654C268018BCA0B60023AE88 /* DrawViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
 		654C268218BCA0B60023AE88 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		654C268918BCA0B60023AE88 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		654C269118BCA0B60023AE88 /* MVArrowOverlaysTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MVArrowOverlaysTests-Info.plist"; sourceTree = "<group>"; };
-		654C269318BCA0B60023AE88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		654C269518BCA0B60023AE88 /* MVArrowOverlaysTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVArrowOverlaysTests.m; sourceTree = "<group>"; };
 		654C26A018BCA0E90023AE88 /* MVArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVArrow.h; sourceTree = "<group>"; };
 		654C26A118BCA0E90023AE88 /* MVArrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVArrow.m; sourceTree = "<group>"; };
 		654C26A318BCC39E0023AE88 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		654C26A418BCC39E0023AE88 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
-		ABC35D8170B91B6B4520D84B /* ArrowOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrowOverlayView.m; sourceTree = "<group>"; };
-		ABC35F252C5177868696310F /* ArrowOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrowOverlayView.h; sourceTree = "<group>"; };
+		ABC35292C69C90F85788986B /* MVArrowOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVArrowOverlayView.m; sourceTree = "<group>"; };
+		ABC35F2BC8FCDADF87CEFF70 /* MVArrowOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVArrowOverlayView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +64,6 @@
 			children = (
 				654C269F18BCA0D60023AE88 /* MVArrowOverlay */,
 				654C266D18BCA0B60023AE88 /* MVArrowOverlays */,
-				654C268F18BCA0B60023AE88 /* MVArrowOverlaysTests */,
 				654C266618BCA0B60023AE88 /* Frameworks */,
 				654C266518BCA0B60023AE88 /* Products */,
 			);
@@ -102,8 +98,6 @@
 				654C268018BCA0B60023AE88 /* DrawViewController.m */,
 				654C268218BCA0B60023AE88 /* Images.xcassets */,
 				654C266E18BCA0B60023AE88 /* Supporting Files */,
-				ABC35D8170B91B6B4520D84B /* ArrowOverlayView.m */,
-				ABC35F252C5177868696310F /* ArrowOverlayView.h */,
 				654C26A318BCC39E0023AE88 /* DemoViewController.h */,
 				654C26A418BCC39E0023AE88 /* DemoViewController.m */,
 			);
@@ -121,29 +115,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		654C268F18BCA0B60023AE88 /* MVArrowOverlaysTests */ = {
-			isa = PBXGroup;
-			children = (
-				654C269518BCA0B60023AE88 /* MVArrowOverlaysTests.m */,
-				654C269018BCA0B60023AE88 /* Supporting Files */,
-			);
-			path = MVArrowOverlaysTests;
-			sourceTree = "<group>";
-		};
-		654C269018BCA0B60023AE88 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				654C269118BCA0B60023AE88 /* MVArrowOverlaysTests-Info.plist */,
-				654C269218BCA0B60023AE88 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		654C269F18BCA0D60023AE88 /* MVArrowOverlay */ = {
 			isa = PBXGroup;
 			children = (
 				654C26A018BCA0E90023AE88 /* MVArrow.h */,
 				654C26A118BCA0E90023AE88 /* MVArrow.m */,
+				ABC35F2BC8FCDADF87CEFF70 /* MVArrowOverlayView.h */,
+				ABC35292C69C90F85788986B /* MVArrowOverlayView.m */,
 			);
 			path = MVArrowOverlay;
 			sourceTree = "<group>";
@@ -218,7 +196,7 @@
 				654C26A218BCA0E90023AE88 /* MVArrow.m in Sources */,
 				654C26A518BCC39E0023AE88 /* DemoViewController.m in Sources */,
 				654C267418BCA0B60023AE88 /* main.m in Sources */,
-				ABC350105AEFBAE0E8AAB950 /* ArrowOverlayView.m in Sources */,
+				ABC351C363F6C1717D9A0739 /* MVArrowOverlayView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,14 +217,6 @@
 				654C267A18BCA0B60023AE88 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		654C269218BCA0B60023AE88 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				654C269318BCA0B60023AE88 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

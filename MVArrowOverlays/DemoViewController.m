@@ -7,12 +7,12 @@
 //
 
 #import "DemoViewController.h"
-#import "ArrowOverlayView.h"
+#import "MVArrowOverlayView.h"
 
 @interface DemoViewController ()
 @property(strong, nonatomic) IBOutlet UILabel *infoLabel;
 @property(strong, nonatomic) IBOutlet UIButton *doSomethingButton;
-@property(strong, nonatomic) IBOutlet ArrowOverlayView *overlayView;
+@property(strong, nonatomic) IBOutlet MVArrowOverlayView *overlayView;
 
 - (IBAction)doSomethingButtonPressed:(UIButton *)sender;
 

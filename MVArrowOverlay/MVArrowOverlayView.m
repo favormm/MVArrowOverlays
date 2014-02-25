@@ -3,21 +3,15 @@
 // Copyright (c) 2014 Snupps. All rights reserved.
 //
 
-#import "ArrowOverlayView.h"
+#import "MVArrowOverlayView.h"
 #import "MVArrow.h"
 
-@interface ArrowOverlayView ()
+@interface MVArrowOverlayView ()
 @property MVArrow *arrow;
 @end
 
-@implementation ArrowOverlayView
+@implementation MVArrowOverlayView
 
-//- (id)init {
-//    if (self = [super init]) {
-//
-//    }
-//    return self;
-//}
 - (void)awakeFromNib
 {
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapFrom:)];
@@ -66,7 +60,8 @@
     //Code to handle the gesture
     CGPoint location = [recognizer locationInView:recognizer.view];
 
-    [self.delegate tappedAtPosition:location];
+    if ([self.delegate respondsToSelector:@selector(tappedAtPosition:)])
+        [self.delegate tappedAtPosition:location];
 }
 
 @end

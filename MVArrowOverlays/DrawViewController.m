@@ -7,10 +7,10 @@
 //
 
 #import "DrawViewController.h"
-#import "ArrowOverlayView.h"
+#import "MVArrowOverlayView.h"
 
-@interface DrawViewController ()<CustomViewDelegate>
-@property(strong, nonatomic) IBOutlet ArrowOverlayView *tappableView;
+@interface DrawViewController ()<MVArrowOverlayDelegate>
+@property(strong, nonatomic) IBOutlet MVArrowOverlayView *tappableView;
 @property(strong, nonatomic) IBOutlet UISlider *slider;
 @property(strong, nonatomic) IBOutlet UISwitch *clockwiseSwitch;
 @property(strong, nonatomic) IBOutlet UILabel *sliderLabel;
