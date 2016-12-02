@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
                     This project includes a simple MVArrow class that can be used to draw arrows in your code.
                    DESC
 
-  s.homepage     = "https://github.com/bizz84/MVArrowOverlays"
+  s.homepage     = "https://github.com/favormm/MVArrowOverlays"
 
   s.license      = { :type => 'MIT', :file => 'LICENSE.md' }
 
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '7.0'
 
-  s.source       = { :git => "https://github.com/bizz84/MVArrowOverlays.git", :tag => '1.0.0' }
+  s.source       = { :git => "https://github.com/favormm/MVArrowOverlays.git", :tag => '1.0.0' }
 
   s.source_files = 'MVArrowOverlay/*.{h,m}', 'MVArrowOverlays/*.{h,m}'
 
